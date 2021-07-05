@@ -8,15 +8,15 @@
         <tr>
           <th>Name</th>
           <th>Programming Language</th>
-          <th >Star Count <button v-on:click="sortStarsAsc()">Asc</button><button v-on:click="sortStarsDesc()">Desc</button></th>
-          <th >Fork Count <button v-on:click="sortForksAsc()">Asc</button><button v-on:click="sortStarsDesc()">Desc</button></th>
+          <th class="responsive">Star Count <button v-on:click="sortStarsAsc()">Asc</button><button v-on:click="sortStarsDesc()">Desc</button></th>
+          <th class="responsive">Fork Count <button v-on:click="sortForksAsc()">Asc</button><button v-on:click="sortStarsDesc()">Desc</button></th>
           <th>Authors Avatar</th>
         </tr>
         <tr v-for="apis in popularAPIs" v-bind:key="apis.name">
           <td>{{apis.name}}</td>
           <td>{{apis.language}}</td>
-          <td>{{apis.stars}}</td>
-          <td>{{apis.forks}}</td>
+          <td class="responsive">{{apis.stars}}</td>
+          <td class="responsive">{{apis.forks}}</td>
           <td><img class="author-avatar" :src="apis.avatar"></td>
         </tr>
       </table>
@@ -236,6 +236,12 @@ export default {
 
 li {
   list-style: none;
+}
+
+@media (max-width: 550px) {
+  .responsive {
+    display: none;
+  }
 }
 
 </style>
