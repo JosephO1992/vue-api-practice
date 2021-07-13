@@ -1,9 +1,10 @@
 <template>
   <div id="app">
-    <Header/>
+    <Header title="API App"/>
+    <!-- <div v-if="tableLoading">Loading...</div> -->
     <Table v-bind:popularAPIs="popularAPIs"/>
     <List v-bind:popularLangs="popularLangs"/>
-
+    
   </div>
 
   
@@ -28,15 +29,18 @@ export default {
       popularLangs: [],
       popularAPIs: [],
       showDetails: false,
-      
+      listLoading: false,
+      tableLoading: false,
     }
   },
   created: function() {
+   
     this.getPopularAPIs(),
     this.getPopularLangs()
   },
   methods: {
     getPopularAPIs(){
+      this.tableLoading = true;
       fetch('https://api.trending-github.com/github/repositories')
       .then(response => response.json())
       .then(
@@ -44,12 +48,10 @@ export default {
     },
 
      getPopularLangs(){
-       
-      
+      this.listLoading = true;
       fetch('https://api.trending-github.com/github/languages')
       .then(response => response.json())
       .then(data => (this.popularLangs = data));
-
     },
 
     
@@ -130,7 +132,7 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Avenir, Helvetica, Arial, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
