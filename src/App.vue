@@ -1,15 +1,15 @@
 <template>
   <div id="app">
     <Header/>
+    <Table v-bind:popularAPIs="popularAPIs"/>
     <div class="container direction">
       <h2>Top 10 Most Popular languages</h2>
-    <ul v-for="lang in popularLangs.slice(0,10)" v-bind:key="lang">
-      <li>{{lang}}</li>
-    </ul>
-
+        <ul v-for="lang in popularLangs.slice(0,10)" v-bind:key="lang">
+          <li>{{lang}}</li>
+        </ul>
     </div>
 
-    <div class="flex flex-col">
+    <!-- <div class="flex flex-col">
       <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
           <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
@@ -65,7 +65,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 
   
@@ -75,11 +75,13 @@
 
 <script>
 import Header from './components/Header.vue';
+import Table from './components/Table.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
+    Table
   },
   data: function(){
     return {

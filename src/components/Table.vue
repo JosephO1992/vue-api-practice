@@ -14,11 +14,11 @@
                     </th>
                     <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Star Count 
-                        <button class="ml-3 py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" v-on:click="sortStarsAsc()">Asc</button><button class="ml-3 py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" v-on:click="sortStarsDesc()">Desc</button>
+                        <!-- <button class="ml-3 py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" v-on:click="sortStarsAsc()">Asc</button><button class="ml-3 py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" v-on:click="sortStarsDesc()">Desc</button> -->
                     </th>
                     <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Fork Count 
-                        <button class="ml-3 py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" v-on:click="sortForksAsc()">Asc</button><button class="ml-3 py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" v-on:click="sortStarsDesc()">Desc</button>
+                        <!-- <button class="ml-3 py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" v-on:click="sortForksAsc()">Asc</button><button class="ml-3 py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" v-on:click="sortStarsDesc()">Desc</button> -->
                     </th>
                     <th scope="col" class="relative px-6 py-3">
                         Author Avatar
@@ -59,7 +59,10 @@
 </template>
 <script>
 export default {
-    name: 'Table'
+    name: 'Table',
+    props: {
+        popularAPIs: Array
+    }
     
 }
 </script>
